@@ -3,135 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhawal’s Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Dhawal Ratnaparkhi — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8fafc;
-      --text: #1e293b;
-      --muted: #64748b;
-      --brand: #2563eb;
-      --brand-light: #60a5fa;
+      --bg: #0b1a3f;
+      --text: #f0f4ff;
+      --muted: #a0b0d0;
+      --brand: #60a5fa;
+      --brand-dark: #2563eb;
+      --card-bg: #11264d;
+      --shadow: 0 10px 30px rgba(0,0,0,.4);
     }
+    * {box-sizing: border-box;}
     body {
       margin: 0;
       font-family: Inter, sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
+    a {color: inherit; text-decoration: none;}
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem 2rem;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 800;
+      background: linear-gradient(90deg,var(--brand),var(--brand-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin: 0;
-      color: var(--brand);
     }
     header p {
       color: var(--muted);
-      margin: .5rem 0 0;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
     }
-    /* Filter buttons */
-    .filters {
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-    .filters button {
-      border: none;
-      padding: .6rem 1.2rem;
-      margin: 0 .3rem;
-      border-radius: 20px;
-      background: var(--brand-light);
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .2s;
-    }
-    .filters button:hover {
-      background: var(--brand);
-    }
-    /* Masonry grid */
     .grid {
-      column-count: 3;
-      column-gap: 1rem;
-      padding: 1rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
-    @media(max-width: 900px){ .grid{column-count:2} }
-    @media(max-width: 600px){ .grid{column-count:1} }
-
-    .item {
-      background: white;
-      margin: 0 0 1rem;
-      display: inline-block;
-      width: 100%;
-      border-radius: 14px;
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: transform .25s;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-    .item:hover { transform: translateY(-6px); }
-
-    .item img {
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+    .card img {
       width: 100%;
+      height: 200px;
+      object-fit: cover;
       display: block;
     }
     .info {
-      padding: 1rem;
+      padding: 1rem 1.2rem;
     }
     .info h3 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--brand);
     }
     .info p {
-      margin: .4rem 0 0;
+      margin: 0.4rem 0 0;
       color: var(--muted);
-      font-size: .9rem;
+      font-size: 0.95rem;
+    }
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.6rem;
+    }
+    .tag {
+      font-size: 0.75rem;
+      border: 1px solid var(--brand);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      color: var(--brand);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    @media(max-width: 600px){
+      .card img {height: 180px;}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>My Portfolio</h1>
-    <p>Selected LinkedIn carousels, banners, and branding work.</p>
-  </header>
 
-  <div class="filters">
-    <button>All</button>
-    <button>Carousels</button>
-    <button>Banners</button>
-    <button>Brand Kits</button>
+<header>
+  <h1>Dhawal Ratnaparkhi — Portfolio</h1>
+  <p>Selected LinkedIn carousels, banners, and brand kits</p>
+</header>
+
+<main class="grid">
+  <div class="card">
+    <img src="images/carousel card.jpg" alt="Carousel Series">
+    <div class="info">
+      <h3>Carousel Series</h3>
+      <p>Designed a 10-slide framework that boosted saves by 32%.</p>
+      <div class="tags">
+        <span class="tag">Carousel</span>
+        <span class="tag">Content</span>
+        <span class="tag">LinkedIn</span>
+      </div>
+    </div>
   </div>
 
-  <main class="grid">
-    <div class="item">
-      <img src="images/carousel1.jpg" alt="Carousel Project">
-      <div class="info">
-        <h3>Carousel Series</h3>
-        <p>10-slide framework that boosted saves by 32%.</p>
+  <div class="card">
+    <img src="images/banner card.jpg" alt="Personal Brand Banner">
+    <div class="info">
+      <h3>Personal Brand Banner</h3>
+      <p>Header system with modular badges and callouts.</p>
+      <div class="tags">
+        <span class="tag">Banner</span>
+        <span class="tag">Branding</span>
       </div>
     </div>
+  </div>
 
-    <div class="item">
-      <img src="images/banner1.jpg" alt="Banner Project">
-      <div class="info">
-        <h3>Personal Brand Banner</h3>
-        <p>Header system with modular callouts.</p>
+  <div class="card">
+    <img src="images/brandkit card.jpg" alt="Startup Brand Kit">
+    <div class="info">
+      <h3>Startup Brand Kit</h3>
+      <p>Palette, type scale, and templates for a SaaS founder.</p>
+      <div class="tags">
+        <span class="tag">Brand Kit</span>
+        <span class="tag">Templates</span>
       </div>
     </div>
+  </div>
 
-    <div class="item">
-      <img src="images/brandkit1.jpg" alt="Brand Kit">
-      <div class="info">
-        <h3>Startup Brand Kit</h3>
-        <p>Palette, typography, and templates.</p>
+  <div class="card">
+    <img src="images/carouselpack card.jpg" alt="Carousel Template Pack">
+    <div class="info">
+      <h3>Carousel Template Pack</h3>
+      <p>Reusable Canva components for fast content production.</p>
+      <div class="tags">
+        <span class="tag">Canva</span>
+        <span class="tag">Templates</span>
       </div>
     </div>
+  </div>
+</main>
 
-    <!-- Add more project items here -->
-  </main>
+<footer>
+  © 2025 Dhawal Ratnaparkhi · All Rights Reserved
+</footer>
+
 </body>
 </html>
