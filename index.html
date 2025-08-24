@@ -1,114 +1,435 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhawal Ratnaparkhi — Graphic Designer</title>
-  <meta name="description" content="Portfolio website for a graphic designer specializing in LinkedIn banners, carousels, and brand identity." />
-  <meta property="og:title" content="Dhawal Ratnaparkhi — Graphic Designer" />
-  <meta property="og:description" content="LinkedIn design, carousels, banners, and branding. Book a 1:1 call." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#1d4ed8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dhawal Ratnaparkhi — Graphic Designer</title>
+    <meta name="description" content="Portfolio website for a graphic designer specializing in LinkedIn banners, carousels, and brand identity." />
+    <meta property="og:title" content="Dhawal Ratnaparkhi — Graphic Designer" />
+    <meta property="og:description" content="LinkedIn design, carousels, banners, and branding. Book a 1:1 call." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0d111c" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #0a0f1f; /* deep navy */
-      --panel: #111827; /* card background */
-      --text: #e5e7eb; /* light gray text */
-      --muted: #9ca3af; /* muted text */
-      --brand: #3b82f6; /* primary blue */
-      --brand-600: #2563eb; 
-      --accent: #60a5fa; /* light blue accent */
-      --ring: rgba(59,130,246,.5);
-      --card-border: rgba(255,255,255,.06);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6; /* A vibrant blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb; /* A darker blue on hover */
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(to top, #0f172a, #0b0f1a);
+        }
+        .section-bg {
+            background-image: linear-gradient(to top, #0d111c, #131a29);
+        }
+    </style>
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 600px at 90% -10%, rgba(59,130,246,.18), transparent 60%),
-                  radial-gradient(900px 500px at -10% 10%, rgba(96,165,250,.15), transparent 60%),
-                  var(--bg);
-      color: var(--text);
-      line-height:1.6;
-    }
-
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1120px, 92%);margin-inline:auto}
-
-    .btn{
-      display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.15rem;border-radius:14px;
-      border:1px solid var(--card-border);
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-      color:var(--text);font-weight:600;box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .15s ease, background .2s ease, border-color .2s ease;
-    }
-    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(0,0,0,.45);border-color:rgba(255,255,255,.16)}
-    .btn.primary{
-      background:linear-gradient(180deg, rgba(59,130,246,.25), rgba(37,99,235,.15));
-      border-color:rgba(59,130,246,.55)
-    }
-    .btn.ghost{background:transparent}
-
-    .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:999px;
-      border:1px solid var(--card-border);color:var(--muted);font-size:.85rem}
-    .chip .dot{width:.45rem;height:.45rem;border-radius:50%;background:var(--brand)}
-
-    /* Header */
-    header{position:sticky;top:0;z-index:50;background:rgba(10,15,30,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--card-border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
-    .logo{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.3px}
-    .logo-mark{width:36px;height:36px;border-radius:12px;
-      background:linear-gradient(135deg, var(--accent), var(--brand));
-      display:grid;place-items:center;box-shadow:var(--shadow)}
-
-    .logo-mark svg{filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
-    .navlinks{display:flex;gap:.6rem;align-items:center}
-    .navlinks a{padding:.55rem .8rem;border-radius:10px;border:1px solid transparent}
-    .navlinks a:hover{border-color:var(--card-border);background:rgba(255,255,255,.05)}
-
-    /* Hero */
-    .hero{padding:4.5rem 0 2.5rem}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-    .title{font-size:clamp(2.2rem, 5vw, 3.5rem);line-height:1.1;margin:1rem 0 .75rem;font-weight:900}
-    .subtitle{color:var(--muted);font-size:1.1rem;max-width:60ch}
-    .kpis{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem}
-    .kpis .card{flex:1 1 180px;border:1px solid var(--card-border);padding:1rem 1.1rem;border-radius:16px;
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));min-width:180px}
-    .kpis .num{font-size:1.6rem;font-weight:800}
-    .hero-art{position:relative}
-    .art{aspect-ratio:4/3;border-radius:22px;
-      background:radial-gradient(200px 200px at 70% 30%, rgba(59,130,246,.18), transparent 60%),
-                 radial-gradient(200px 200px at 30% 70%, rgba(37,99,235,.18), transparent 60%),
-                 linear-gradient(145deg, #111729, #0b0f19);
-      border:1px solid var(--card-border);
-      display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}
-    .art-ring{position:absolute;inset:auto;right:10%;top:-8%;width:180px;height:180px;border-radius:50%;border:1px dashed rgba(255,255,255,.18)}
-
-    /* Cards */
-    .card{border:1px solid var(--card-border);border-radius:18px;
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      padding:1.1rem;transition:transform .15s ease, border-color .2s ease, background .2s ease;
-      position:relative;overflow:hidden}
-    .card:hover{transform:translateY(-2px)}
-
-    .service-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(96,165,250,.3), rgba(59,130,246,.25));margin-bottom:.8rem}
-
-    /* Footer */
-    footer{border-top:1px solid var(--card-border);padding:2rem 0;color:var(--muted)}
-    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:start}
-    .social a{border:1px solid var(--card-border);padding:.5rem;border-radius:12px;display:inline-flex;align-items:center;gap:.5rem}
-  </style>
+    <!-- Crisp Chat Script -->
+    <script type="text/javascript">
+        window.$crisp=[];
+        window.CRISP_WEBSITE_ID="5db0150f-0e46-4111-8abc-a4b79812c35a";
+        (function(){
+            d=document;
+            s=d.createElement("script");
+            s.src="https://client.crisp.chat/l.js";
+            s.async=1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
 </head>
-<body>
-  <!-- Your body content remains exactly the same -->
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+    <!-- Header -->
+    <header class="bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg border-b border-slate-800">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#top" class="text-2xl font-bold tracking-tight text-blue-400">
+                Dhawal Ratnaparkhi
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#work" class="hover:text-blue-300 transition-colors duration-300 font-medium">Work</a>
+                <a href="#services" class="hover:text-blue-300 transition-colors duration-300 font-medium">Services</a>
+                <a href="#carousel-tool" class="hover:text-blue-300 transition-colors duration-300 font-medium">AI Tool</a>
+                <a href="#about" class="hover:text-blue-300 transition-colors duration-300 font-medium">About</a>
+                <a href="#contact" class="hover:text-blue-300 transition-colors duration-300 font-medium">Contact</a>
+                <a href="https://topmate.io/dhawal_ratnaparkhi/1681170" target="_blank" rel="noopener" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300 transform hover:-translate-y-0.5">
+                    Book 1:1 Call
+                </a>
+            </div>
+            <button class="md:hidden text-blue-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main id="top" class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section class="py-24 sm:py-32 flex flex-col md:flex-row items-center justify-between gap-12 hero-bg rounded-b-3xl -mx-4 sm:-mx-6 lg:-mx-8">
+            <div class="md:w-3/5 text-center md:text-left px-4 sm:px-6 lg:px-8">
+                <span class="inline-block bg-blue-800 text-blue-200 text-sm font-medium px-4 py-1 rounded-full mb-4">
+                    Available for projects
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-blue-300">
+                    Graphic designer for <span class="text-blue-500">high‑performing LinkedIn content.</span>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto md:mx-0">
+                    I design scroll‑stopping LinkedIn carousels, banners, and brand systems that look sharp and get results. Clean layouts, strong hierarchy, and consistent branding across your profile.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#work" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300 transform hover:-translate-y-0.5">
+                        See my work
+                    </a>
+                    <a href="mailto:dhawal.ratnaparkhii@gmail.com" class="border border-blue-600 text-blue-400 font-semibold py-3 px-8 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300 transform hover:-translate-y-0.5">
+                        Email me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-2/5 relative px-4 sm:px-6 lg:px-8">
+                <img src="https://placehold.co/600x600/1e293b/94a3b8?text=Your+Image" alt="Dhawal Ratnaparkhi" class="rounded-3xl shadow-2xl transition-transform duration-500 transform hover:scale-105">
+            </div>
+        </section>
+
+        <!-- Carousel Idea Generator Section -->
+        <section id="carousel-tool" class="py-16 sm:py-24 section-bg rounded-3xl mt-12 mb-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-blue-300">✨ LinkedIn Carousel Idea Generator</h2>
+                <p class="text-slate-400 mt-2">Enter a topic and let AI generate a full carousel post idea for you.</p>
+            </div>
+            <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl max-w-2xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="text" id="topicInput" placeholder="e.g., The future of AI in design" class="flex-grow bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-3 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300">
+                    <button id="generateBtn" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300 transform hover:-translate-y-0.5">
+                        Generate Idea
+                    </button>
+                </div>
+                <div id="loading" class="mt-4 text-center hidden">
+                    <p class="text-blue-400 animate-pulse">Generating your idea... please wait.</p>
+                </div>
+                <div id="results" class="mt-8 space-y-6">
+                    <!-- Results will be injected here -->
+                </div>
+                <div id="error" class="mt-4 text-red-400 hidden text-center">
+                    Something went wrong. Please try again.
+                </div>
+                <div id="custom-alert" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-xl border border-slate-700 w-80">
+                        <p id="alert-message" class="text-center text-slate-200"></p>
+                        <div class="flex justify-center mt-4">
+                            <button id="alert-ok" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-500">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 sm:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-blue-300">Our Services</h2>
+                <p class="text-slate-400 mt-2">Clear, consistent visuals for your LinkedIn brand.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-500 text-5xl mb-4 text-center">
+                        <span role="img" aria-label="briefcase">💼</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-200 text-center mb-2">LinkedIn Banners</h3>
+                    <p class="text-slate-400 text-center">Polished headers that communicate your value in seconds.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-500 text-5xl mb-4 text-center">
+                        <span role="img" aria-label="puzzle piece">🧩</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-200 text-center mb-2">Carousel Design</h3>
+                    <p class="text-slate-400 text-center">Readable, high‑contrast slides that drive time‑on‑post.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-500 text-5xl mb-4 text-center">
+                        <span role="img" aria-label="art palette">🎨</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-200 text-center mb-2">Brand Kits</h3>
+                    <p class="text-slate-400 text-center">Typography, color, and reusable components for consistency.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="work" class="py-16 sm:py-24">
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-blue-300">Selected Work</h2>
+                <a href="#contact" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full mt-4 sm:mt-0 hover:bg-blue-500 transition-colors duration-300 transform hover:-translate-y-0.5">
+                    Start a project
+                </a>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <article class="bg-slate-900 rounded-2xl overflow-hidden border border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+One" alt="LinkedIn carousel project preview" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-200">Carousel Series</h3>
+                        <p class="text-slate-400 mt-2">Designed a 10‑slide framework that boosted saves by 32%.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">Carousel</span>
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">Content</span>
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">LinkedIn</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Portfolio Item 2 -->
+                <article class="bg-slate-900 rounded-2xl overflow-hidden border border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+Two" alt="Profile banner design" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-200">Personal Brand Banner</h3>
+                        <p class="text-slate-400 mt-2">Header system with modular badges and callouts.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">Banner</span>
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">Branding</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Portfolio Item 3 -->
+                <article class="bg-slate-900 rounded-2xl overflow-hidden border border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+Three" alt="Brand kit mockups" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-200">Startup Brand Kit</h3>
+                        <p class="text-slate-400 mt-2">Palette, type scale, and templates for a SaaS founder.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">Brand Kit</span>
+                            <span class="bg-blue-900 text-blue-300 text-xs px-3 py-1 rounded-full">Templates</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 sm:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-blue-300">About Me</h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- About Card -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl">
+                    <h3 class="text-2xl font-semibold text-blue-200 mb-4">Hi, I’m Dhawal.</h3>
+                    <p class="text-slate-400 leading-relaxed">I help founders and creators look professional on LinkedIn. My work focuses on clarity, rhythm, and consistent brand language. I’m comfortable collaborating async or live on a call.</p>
+                </div>
+                <!-- Process Card -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl">
+                    <h3 class="text-2xl font-semibold text-blue-200 mb-4">My Process</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-slate-400">
+                        <li><strong>Discovery:</strong> We'll discuss your goals, audience, and visual examples.</li>
+                        <li><strong>Direction:</strong> I'll create a mood board and select a type and color palette.</li>
+                        <li><strong>Design:</strong> I'll deliver first drafts for quick feedback.</li>
+                        <li><strong>Deliver:</strong> I'll hand off all final assets and templates.</li>
+                    </ol>
+                    <div class="mt-8">
+                        <a class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300 transform hover:-translate-y-0.5" href="https://topmate.io/dhawal_ratnaparkhi/1681170" target="_blank" rel="noopener">
+                            Book a 1:1
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-blue-300">Contact</h2>
+                <p class="text-slate-400 mt-2">Pick a channel that works for you.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Message Card -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl">
+                    <h3 class="text-2xl font-semibold text-blue-200 mb-4">Message Me</h3>
+                    <p class="text-slate-400">Use the chat bubble in the corner or email me directly.</p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="mailto:dhawal.ratnaparkhii@gmail.com" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-500 transition-colors duration-300 transform hover:-translate-y-0.5">
+                            Email me
+                        </a>
+                        <a href="https://topmate.io/dhawal_ratnaparkhi/1681170" target="_blank" rel="noopener" class="border border-blue-600 text-blue-400 font-semibold py-3 px-6 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300 transform hover:-translate-y-0.5">
+                            Book via Topmate
+                        </a>
+                    </div>
+                </div>
+                <!-- Social Card -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-blue-800 shadow-xl">
+                    <h3 class="text-2xl font-semibold text-blue-200 mb-4">Social</h3>
+                    <p class="text-slate-400">Connect with me on these platforms.</p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="https://www.linkedin.com/in/dhawal-ratnaparkhi" target="_blank" rel="noopener" class="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-300">
+                            <span class="text-xl">🔗</span><span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.behance.net/2f6d0a32" target="_blank" rel="noopener" class="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-300">
+                            <span class="text-xl">🅱️</span><span>Behance</span>
+                        </a>
+                        <a href="https://dribbble.com/your-handle" target="_blank" rel="noopener" class="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-300">
+                            <span class="text-xl">🏀</span><span>Dribbble</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-blue-800 py-8 text-center text-slate-400">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; <span id="year"></span> Dhawal Ratnaparkhi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom alert function to replace the native `alert()`
+        function customAlert(message) {
+            const alertDiv = document.getElementById('custom-alert');
+            const alertMessage = document.getElementById('alert-message');
+            const alertOkBtn = document.getElementById('alert-ok');
+
+            alertMessage.textContent = message;
+            alertDiv.classList.remove('hidden');
+
+            // Handle the OK button click
+            alertOkBtn.onclick = () => {
+                alertDiv.classList.add('hidden');
+            };
+
+            // Handle clicking outside the alert box to close it
+            alertDiv.onclick = (e) => {
+                if (e.target === alertDiv) {
+                    alertDiv.classList.add('hidden');
+                }
+            };
+        }
+
+        // Set the current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Gemini API powered Carousel Idea Generator
+        document.getElementById('generateBtn').addEventListener('click', async () => {
+            const topic = document.getElementById('topicInput').value;
+            const resultsDiv = document.getElementById('results');
+            const loadingDiv = document.getElementById('loading');
+            const errorDiv = document.getElementById('error');
+            const button = document.getElementById('generateBtn');
+
+            // Clear previous results and errors
+            resultsDiv.innerHTML = '';
+            errorDiv.classList.add('hidden');
+
+            if (!topic) {
+                customAlert('Please enter a topic to generate an idea.');
+                return;
+            }
+
+            // Show loading state and disable button
+            loadingDiv.classList.remove('hidden');
+            button.disabled = true;
+            button.textContent = 'Generating...';
+
+            const prompt = `Generate a detailed, step-by-step LinkedIn carousel post idea on the topic of "${topic}". The output should be a series of 5-8 slides, each with a 'title' and a 'description'. Focus on a clear, engaging, and professional tone suitable for LinkedIn. The final output must be a JSON array of objects, where each object has a 'title' and a 'description' property. The JSON array should contain at least 5 objects.`;
+
+            const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = {
+                contents: chatHistory,
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "ARRAY",
+                        items: {
+                            type: "OBJECT",
+                            properties: {
+                                "title": { "type": "STRING" },
+                                "description": { "type": "STRING" }
+                            },
+                            "propertyOrdering": ["title", "description"]
+                        }
+                    }
+                }
+            };
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            try {
+                let response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+
+                    const jsonString = result.candidates[0].content.parts[0].text;
+                    const carouselData = JSON.parse(jsonString);
+
+                    if (Array.isArray(carouselData) && carouselData.length > 0) {
+                        carouselData.forEach((slide, index) => {
+                            const slideCard = document.createElement('div');
+                            slideCard.className = 'bg-slate-800 p-6 rounded-lg border border-slate-700 shadow-sm';
+                            slideCard.innerHTML = `
+                                <h4 class="text-lg font-semibold text-blue-300">Slide ${index + 1}: ${slide.title}</h4>
+                                <p class="text-slate-400 mt-2">${slide.description}</p>
+                            `;
+                            resultsDiv.appendChild(slideCard);
+                        });
+                    } else {
+                        throw new Error('Invalid or empty JSON response.');
+                    }
+                } else {
+                    throw new Error('No candidates found in the response.');
+                }
+            } catch (err) {
+                console.error('Error generating carousel idea:', err);
+                errorDiv.classList.remove('hidden');
+            } finally {
+                loadingDiv.classList.add('hidden');
+                button.disabled = false;
+                button.textContent = 'Generate Idea';
+            }
+        });
+    </script>
 </body>
 </html>
