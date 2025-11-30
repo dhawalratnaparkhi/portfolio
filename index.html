@@ -2,144 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dhawal Ratanaparkhi</title>
     <meta name="description" content="Turning your Content to Life with Impactful Design.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: 220 70% 50%;
-            --primary-foreground: 0 0% 100%;
-            --accent: 280 70% 60%;
-            --background: 0 0% 100%;
-            --foreground: 222.2 84% 4.9%;
-            --card: 0 0% 100%;
-            --card-foreground: 222.2 84% 4.9%;
-            --muted: 210 40% 96.1%;
-            --muted-foreground: 215.4 16.3% 46.9%;
-            --border: 214.3 31.8% 91.4%;
-            --ring: 222.2 84% 4.9%;
-        }
-
-        .dark {
-            --primary: 220 70% 50%;
-            --primary-foreground: 0 0% 100%;
-            --accent: 280 70% 60%;
-            --background: 222.2 84% 4.9%;
-            --foreground: 210 40% 98%;
-            --card: 222.2 84% 4.9%;
-            --card-foreground: 210 40% 98%;
-            --muted: 217.2 32.6% 17.5%;
-            --muted-foreground: 215 20.2% 65.1%;
-            --border: 217.2 32.6% 17.5%;
-            --ring: 212.7 26.8% 83.9%;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #8b5cf6;
+            --accent: #ec4899;
+            --background: #0a0a0a;
+            --foreground: #ffffff;
+            --muted: #6b7280;
+            --muted-foreground: #9ca3af;
+            --card: #1a1a1a;
+            --border: #2a2a2a;
+        }
+
         body {
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: hsl(var(--background));
-            color: hsl(var(--foreground));
+            background-color: var(--background);
+            color: var(--foreground);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        .dark {
-            color-scheme: dark;
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        /* Header Styles */
+        /* Header */
         header {
             position: sticky;
             top: 0;
             z-index: 50;
-            width: 100%;
-            background-color: hsl(var(--background));
-            border-bottom: 1px solid hsl(var(--border));
-            transition: all 0.3s;
+            background-color: var(--background);
+            border-bottom: 1px solid var(--border);
         }
 
-        .header-container {
+        .header-content {
+            display: flex;
+            align-items: center;
+            height: 64px;
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            height: 4rem;
-            align-items: center;
+            padding: 0 24px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-right: 1.5rem;
+            gap: 12px;
             text-decoration: none;
-            color: hsl(var(--foreground));
+            color: var(--foreground);
+            margin-right: 24px;
         }
 
         .logo svg {
-            height: 1.75rem;
-            width: 1.75rem;
+            width: 28px;
+            height: 28px;
         }
 
-        .logo-text {
-            font-size: 1.125rem;
+        .logo span {
+            font-size: 18px;
             font-weight: 700;
-            line-height: 1;
+            letter-spacing: -0.02em;
         }
 
         nav {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
+            display: none;
             flex: 1;
+            gap: 4px;
         }
 
         nav a {
-            display: block;
-            padding: 0.5rem 0.75rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: hsl(var(--muted-foreground));
+            padding: 8px 12px;
+            color: var(--muted-foreground);
             text-decoration: none;
-            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: hsl(var(--foreground));
+            color: var(--foreground);
         }
 
         .header-actions {
+            margin-left: auto;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            flex: 1;
-            gap: 0.75rem;
+            gap: 12px;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
+            padding: 10px 16px;
+            font-size: 14px;
             font-weight: 500;
-            color: hsl(var(--primary-foreground));
-            background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
-            border: none;
-            border-radius: 0.375rem;
+            border-radius: 6px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
             text-decoration: none;
-            cursor: pointer;
             transition: opacity 0.3s;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary:hover {
@@ -148,266 +124,214 @@
 
         /* Hero Section */
         .hero {
-            width: 100%;
-            background: transparent;
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .hero-content {
-            display: grid;
-            gap: 3rem;
-            align-items: center;
-            padding: 5rem 0 8rem;
-        }
-
-        .hero-text {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 80px 0 128px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.25rem;
+            font-size: 3.75rem;
             font-weight: 800;
             line-height: 1.1;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
         }
 
         .text-gradient {
-            background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradient-shift 3s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
         }
 
         .hero p {
-            margin-top: 1.5rem;
-            max-width: 36rem;
-            font-size: 1.125rem;
-            color: hsl(var(--muted-foreground));
+            font-size: 18px;
+            color: var(--muted-foreground);
+            max-width: 576px;
+            margin: 0 auto 32px;
         }
 
         .hero-buttons {
-            margin-top: 2rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            gap: 16px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn-secondary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.625rem 2rem;
-            font-size: 0.875rem;
+            padding: 11px 32px;
+            font-size: 14px;
             font-weight: 500;
-            border: 1px solid hsl(var(--border));
-            background-color: hsl(var(--background));
-            color: hsl(var(--foreground));
-            border-radius: 0.375rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--background);
+            color: var(--foreground);
             text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s;
+            transition: background 0.3s;
         }
 
         .btn-secondary:hover {
-            background-color: hsl(var(--muted));
+            background: var(--card);
         }
 
         /* About Section */
-        .about-section {
-            background-color: hsl(var(--muted));
-            padding: 5rem 0 8rem;
+        .about {
+            padding: 80px 0 128px;
+            background: linear-gradient(to bottom, transparent, rgba(138, 92, 246, 0.05));
         }
 
         .about-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 48px;
             align-items: center;
         }
 
-        .about-image-wrapper {
+        .about-image {
             position: relative;
             aspect-ratio: 1;
-            max-width: 28rem;
+            max-width: 448px;
             margin: 0 auto;
             overflow: hidden;
             border-radius: 50%;
         }
 
-        .about-image {
+        .about-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transform: scale(1.25);
         }
 
-        .about-text h2 {
-            font-size: 1.875rem;
+        .about-content h2 {
+            font-size: 2.25rem;
             font-weight: 600;
-            text-align: center;
+            margin-bottom: 16px;
         }
 
-        .about-text p {
-            margin-top: 1rem;
-            color: hsl(var(--muted-foreground));
+        .about-content p {
+            color: var(--muted-foreground);
+            margin-bottom: 16px;
             text-align: justify;
         }
 
         /* Services Section */
-        .services-section {
-            padding: 5rem 0 8rem;
+        .services {
+            padding: 80px 0 128px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 48px;
         }
 
         .section-header h2 {
-            font-size: 1.875rem;
+            font-size: 2.25rem;
             font-weight: 600;
+            margin-bottom: 16px;
         }
 
         .section-header p {
-            margin-top: 1rem;
-            max-width: 42rem;
-            margin-left: auto;
-            margin-right: auto;
-            color: hsl(var(--muted-foreground));
+            color: var(--muted-foreground);
+            max-width: 672px;
+            margin: 0 auto;
         }
 
         .services-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 32px;
         }
 
         .service-card {
-            border-radius: 0.5rem;
-            border: 1px solid hsl(var(--border));
-            background-color: hsl(var(--card));
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
             text-align: center;
             transition: all 0.3s;
-            height: 100%;
         }
 
         .service-card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            transform: translateY(-0.5rem);
-        }
-
-        .service-card-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1.5rem;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(138, 92, 246, 0.3);
         }
 
         .service-card svg {
-            height: 2.5rem;
-            width: 2.5rem;
-            color: hsl(var(--primary));
+            width: 40px;
+            height: 40px;
+            color: var(--primary);
+            margin-bottom: 16px;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: 600;
-            margin-top: 1rem;
-        }
-
-        .service-card-body {
-            padding: 0 1.5rem 1.5rem;
+            margin-bottom: 12px;
         }
 
         .service-card p {
-            color: hsl(var(--muted-foreground));
+            color: var(--muted-foreground);
+            font-size: 14px;
         }
 
         /* Portfolio Section */
-        .portfolio-section {
-            background-color: hsl(var(--muted));
-            padding: 5rem 0 8rem;
+        .portfolio {
+            padding: 80px 0 128px;
+            background: linear-gradient(to bottom, transparent, rgba(138, 92, 246, 0.05));
         }
 
-        .tabs-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .tabs-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            max-width: 42rem;
-            margin: 0 auto 2rem;
-            padding: 0.25rem;
-            background-color: hsl(var(--muted));
-            border-radius: 0.375rem;
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 48px;
+            background: var(--card);
+            padding: 4px;
+            border-radius: 8px;
+            max-width: 672px;
+            margin: 0 auto 48px;
         }
 
         .tab-button {
-            padding: 0.375rem 0.75rem;
-            font-size: 0.875rem;
+            padding: 12px 24px;
+            font-size: 14px;
             font-weight: 500;
             border: none;
             background: transparent;
-            color: hsl(var(--muted-foreground));
-            border-radius: 0.125rem;
+            color: var(--muted-foreground);
             cursor: pointer;
+            border-radius: 6px;
             transition: all 0.3s;
         }
 
         .tab-button.active {
-            background-color: hsl(var(--background));
-            color: hsl(var(--foreground));
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            background: var(--background);
+            color: var(--foreground);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         .portfolio-item {
-            border-radius: 0.5rem;
-            background-color: hsl(var(--card));
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 12px;
             overflow: hidden;
             border: 2px solid transparent;
             transition: all 0.3s;
+            background: var(--card);
         }
 
         .portfolio-item:hover {
-            border-color: hsl(var(--primary));
-        }
-
-        .portfolio-item-image {
-            aspect-ratio: 4/3;
-            width: 100%;
-            overflow: hidden;
+            border-color: var(--primary);
         }
 
         .portfolio-item img {
@@ -422,120 +346,96 @@
         }
 
         /* Reviews Section */
-        .reviews-section {
-            padding: 5rem 0 8rem;
+        .reviews {
+            padding: 80px 0 128px;
         }
 
-        .reviews-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .reviews-grid {
-            columns: 1;
-            gap: 1.5rem;
+        .reviews-masonry {
+            column-count: 1;
+            column-gap: 24px;
         }
 
         .review-card {
             break-inside: avoid;
-            margin-bottom: 1.5rem;
-            border-radius: 0.5rem;
-            border: 1px solid hsl(var(--border));
-            background-color: hsl(var(--card) / 0.8);
-            backdrop-filter: blur(8px);
-            padding: 1.5rem;
+            margin-bottom: 24px;
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
         }
 
         .video-wrapper {
             position: relative;
             width: 100%;
-            border-radius: 0.375rem;
+            border-radius: 8px;
             overflow: hidden;
-            background-color: black;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
+            background: black;
         }
 
         .video-wrapper video {
             width: 100%;
             height: auto;
-            object-fit: cover;
+            display: block;
         }
 
         .video-overlay {
             position: absolute;
-            inset: 0;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transition: opacity 0.3s;
-            cursor: pointer;
-        }
-
-        .video-wrapper:hover .video-overlay {
-            opacity: 1;
-        }
-
-        .play-button {
-            padding: 0.75rem;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .video-info {
-            position: absolute;
-            bottom: 0.5rem;
-            left: 0.5rem;
-            right: 0.5rem;
-            display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             color: white;
         }
 
         .video-name {
             font-weight: 600;
-            font-size: 0.875rem;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .stars {
             display: flex;
-            gap: 0.25rem;
+            gap: 2px;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
             color: #fbbf24;
         }
 
-        .review-quote {
+        .review-text {
             font-style: italic;
-            color: hsl(var(--muted-foreground));
-            margin-bottom: 1rem;
-        }
-
-        .review-author-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 1rem;
+            color: var(--muted-foreground);
+            margin-bottom: 16px;
         }
 
         .review-author {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
         .avatar {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
+            background: var(--card);
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: hsl(var(--muted));
             font-weight: 600;
-            margin-right: 1rem;
+            border: 2px solid var(--primary);
         }
 
         .author-name {
@@ -543,124 +443,140 @@
         }
 
         .author-title {
-            font-size: 0.875rem;
-            color: hsl(var(--muted-foreground));
+            font-size: 14px;
+            color: var(--muted-foreground);
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid hsl(var(--border));
-            background-color: hsl(var(--background));
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
         }
 
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem 1.5rem;
+        .footer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            gap: 1.5rem;
+            gap: 24px;
         }
 
         .footer-text {
+            font-size: 14px;
+            color: var(--muted-foreground);
             text-align: center;
-            font-size: 0.875rem;
-            color: hsl(var(--muted-foreground));
         }
 
         .social-links {
             display: flex;
-            align-items: center;
-            gap: 1.25rem;
+            gap: 20px;
         }
 
         .social-links a {
-            color: hsl(var(--muted-foreground));
+            color: var(--muted-foreground);
             transition: color 0.3s;
         }
 
         .social-links a:hover {
-            color: hsl(var(--foreground));
+            color: var(--foreground);
         }
 
         .social-links svg {
-            height: 1.25rem;
-            width: 1.25rem;
+            width: 20px;
+            height: 20px;
         }
 
         /* Responsive */
         @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3.75rem;
+            nav {
+                display: flex;
             }
 
             .about-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .about-text {
+            .about-content {
                 text-align: left;
             }
 
-            .about-text h2 {
-                text-align: left;
+            .reviews-masonry {
+                column-count: 2;
             }
 
-            .footer-container {
+            .footer-content {
                 flex-direction: row;
             }
 
             .footer-text {
                 text-align: left;
             }
-
-            .reviews-grid {
-                columns: 2;
-            }
         }
 
         @media (min-width: 1024px) {
-            .reviews-grid {
-                columns: 3;
+            .reviews-masonry {
+                column-count: 3;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
             }
         }
 
-        /* Fade In Animation */
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content h2,
+            .section-header h2 {
+                font-size: 1.875rem;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Animations */
         .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s ease forwards;
+            animation: fadeIn 0.6s ease-in;
         }
 
         @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Dark mode by default */
-        html {
-            color-scheme: dark;
+        /* Hide inactive tabs */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
     </style>
 </head>
-<body class="dark">
+<body>
     <!-- Header -->
     <header>
-        <div class="header-container">
+        <div class="header-content">
             <a href="#home" class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                    <rect width="256" height="256" fill="none"></rect>
                     <path d="M48,80V208a8,8,0,0,0,8,8H200a8,8,0,0,0,8-8V152" fill="none" stroke="currentColor" stroke-width="16"></path>
                     <path d="M160,40l48,48" fill="none" stroke="currentColor" stroke-width="16"></path>
                     <path d="M48,80h72v80a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V80" fill="none" stroke="currentColor" stroke-width="16"></path>
                     <path d="M152,88H208a8,8,0,0,1,8,8v48a8,8,0,0,1-8,8H152V88" fill="none" stroke="currentColor" stroke-width="16"></path>
                     <path d="M104,40,48,80" fill="none" stroke="currentColor" stroke-width="16"></path>
                 </svg>
-                <span class="logo-text">Design Flow</span>
+                <span>Design Flow</span>
             </a>
             <nav>
                 <a href="#home">Home</a>
@@ -671,102 +587,73 @@
                 <a href="#contact">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Let's Connect</a>
+                <a href="https://calendly.com" target="_blank" class="btn-primary">Let's Connect</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="fade-in">
-                        Branding & Design That Drives Real 
-                        <span class="text-gradient">Business Growth</span>
-                    </h1>
-                    <p class="fade-in">
-                        𝗜 𝗵𝗲𝗹𝗽 𝗲𝗻𝘁𝗿𝗲𝗽𝗿𝗲𝗻𝗲𝘂𝗿𝘀 𝗮𝗻𝗱 𝗰𝗼𝗮𝗰𝗵𝗲𝘀 𝗮𝘁𝘁𝗿𝗮𝗰𝘁 𝗰𝗹𝗶𝗲𝗻𝘁𝘀 𝘄𝗶𝘁𝗵 𝘀𝗰𝗿𝗼𝗹𝗹-𝘀𝘁𝗼𝗽𝗽𝗶𝗻𝗴 𝗟𝗶𝗻𝗸𝗲𝗱𝗜𝗻 𝘃𝗶𝘀𝘂𝗮𝗹𝘀, 𝘀𝗮𝘃𝗶𝗻𝗴 𝘆𝗼𝘂 𝟮𝟬+ 𝗵𝗼𝘂𝗿𝘀 𝗽𝗲𝗿 𝘄𝗲𝗲𝗸 𝗼𝗻 𝗰𝗼𝗻𝘁𝗲𝗻𝘁 𝗰𝗿𝗲𝗮𝘁𝗶𝗼𝗻.
-                    </p>
-                    <div class="hero-buttons fade-in">
-                        <a href="#contact" class="btn-primary">
-                            Get a Quote
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;">
-                                <path d="M18 8L22 12L18 16"></path>
-                                <path d="M2 12H22"></path>
-                            </svg>
-                        </a>
-                        <a href="#portfolio" class="btn-secondary">View My Work</a>
-                    </div>
-                </div>
+        <div class="container">
+            <h1 class="fade-in">Branding & Design That Drives Real <span class="text-gradient">Business Growth</span></h1>
+            <p class="fade-in">𝗜 𝗵𝗲𝗹𝗽 𝗲𝗻𝘁𝗿𝗲𝗽𝗿𝗲𝗻𝗲𝘂𝗿𝘀 𝗮𝗻𝗱 𝗰𝗼𝗮𝗰𝗵𝗲𝘀 𝗮𝘁𝘁𝗿𝗮𝗰𝘁 𝗰𝗹𝗶𝗲𝗻𝘁𝘀 𝘄𝗶𝘁𝗵 𝘀𝗰𝗿𝗼𝗹𝗹-𝘀𝘁𝗼𝗽𝗽𝗶𝗻𝗴 𝗟𝗶𝗻𝗸𝗲𝗱𝗜𝗻 𝘃𝗶𝘀𝘂𝗮𝗹𝘀, 𝘀𝗮𝘃𝗶𝗻𝗴 𝘆𝗼𝘂 𝟮𝟬+ 𝗵𝗼𝘂𝗿𝘀 𝗽𝗲𝗿 𝘄𝗲𝗲𝗸 𝗼𝗻 𝗰𝗼𝗻𝘁𝗲𝗻𝘁 𝗰𝗿𝗲𝗮𝘁𝗶𝗼𝗻.</p>
+            <div class="hero-buttons fade-in">
+                <a href="#contact" class="btn-primary">Get a Quote →</a>
+                <a href="#portfolio" class="btn-secondary">View My Work</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-grid">
-            <div class="fade-in">
-                <div class="about-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop" alt="Designer portrait" class="about-image">
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=500&fit=crop" alt="Designer portrait">
                 </div>
-            </div>
-            <div class="about-text fade-in">
-                <h2 class="text-gradient">About Me</h2>
-                <p>
-                    I'm a graphic designer who helps business owners, coaches, and consultants turn their LinkedIn into a client magnet.<br><br>
-                    My specialty? Creating scroll-stopping carousels, data-driven infographics, and branded cheatsheets that do more than look good, they position you as the go-to expert in your field and attract your ideal clients while you sleep. I believe great design should work as hard as you do.
-                </p>
-                <p>
-                    That's why every piece I create is built for engagement, designed to get saved and shared, and crafted to give you back 20+ hours per week. No fluff. No cookie-cutter templates. Just strategic, beautiful content that turns your LinkedIn presence into your most powerful business tool.<br><br>
-                    Ready to elevate your LinkedIn game? Let's talk about how we can transform your content into a client attraction machine.
-                </p>
+                <div class="about-content fade-in">
+                    <h2 class="text-gradient">About Me</h2>
+                    <p>I'm a graphic designer who helps business owners, coaches, and consultants turn their LinkedIn into a client magnet.</p>
+                    <p>My specialty? Creating scroll-stopping carousels, data-driven infographics, and branded cheatsheets that do more than look good, they position you as the go-to expert in your field and attract your ideal clients while you sleep. I believe great design should work as hard as you do.</p>
+                    <p>That's why every piece I create is built for engagement, designed to get saved and shared, and crafted to give you back 20+ hours per week. No fluff. No cookie-cutter templates. Just strategic, beautiful content that turns your LinkedIn presence into your most powerful business tool.</p>
+                    <p>Ready to elevate your LinkedIn game? Let's talk about how we can transform your content into a client attraction machine.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="section-header fade-in">
-            <h2 class="text-gradient">My Services</h2>
-            <p>I offer a range of design services to help your brand shine.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-card-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="text-gradient">My Services</h2>
+                <p>I offer a range of design services to help your brand shine.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="3" width="18" height="6" rx="2" ry="2"></rect>
                         <line x1="3" y1="15" x2="21" y2="15"></line>
                     </svg>
                     <h3>Banners</h3>
-                </div>
-                <div class="service-card-body">
                     <p>High-impact banners for websites, social media, and advertising campaigns that grab attention and drive clicks.</p>
                 </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-card-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="service-card fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                         <line x1="8" y1="3" x2="8" y2="21"></line>
                         <line x1="16" y1="3" x2="16" y2="21"></line>
                     </svg>
                     <h3>Carousels</h3>
-                </div>
-                <div class="service-card-body">
                     <p>Engaging, multi-slide carousels for Instagram and other platforms to tell your brand's story effectively.</p>
                 </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-card-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="service-card fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                         <path d="M2 17l10 5 10-5"></path>
                         <path d="M2 12l10 5 10-5"></path>
                     </svg>
                     <h3>Branding Kits</h3>
-                </div>
-                <div class="service-card-body">
                     <p>Comprehensive branding packages including logos, color palettes, typography, and guidelines to ensure brand consistency.</p>
                 </div>
             </div>
@@ -774,33 +661,106 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="section-header fade-in">
-            <h2 class="text-gradient">My Portfolio</h2>
-            <p>A selection of my favorite projects.</p>
-        </div>
-        <div class="tabs-container">
-            <div class="tabs-list">
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="text-gradient">My Portfolio</h2>
+                <p>A selection of my favorite projects.</p>
+            </div>
+            
+            <div class="tabs">
                 <button class="tab-button active" onclick="showTab('carousels')">Carousels</button>
                 <button class="tab-button" onclick="showTab('banners')">Banners</button>
                 <button class="tab-button" onclick="showTab('infographics')">Infographics</button>
                 <button class="tab-button" onclick="showTab('logos')">Logos</button>
             </div>
-            <div id="carousels" class="portfolio-grid fade-in">
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">
+
+            <div id="carousels" class="tab-content active">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item fade-in">
                         <img src="https://images.unsplash.com/photo-1708402390319-b755d64f3181?w=600&h=450&fit=crop" alt="Carousel design 1">
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">
+                    <div class="portfolio-item fade-in">
                         <img src="https://images.unsplash.com/photo-1717501217793-aa1fa7daa216?w=600&h=450&fit=crop" alt="Carousel design 2">
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">
+                    <div class="portfolio-item fade-in">
                         <img src="https://images.unsplash.com/photo-1712903276863-46af18d1d8db?w=600&h=450&fit=crop" alt="Carousel design 3">
                     </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1656850712653-9938d7eb46d3?w=600&h=450&fit=crop" alt="Carousel design 4">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1762329367301-9009fd143ffa?w=600&h=450&fit=crop" alt="Carousel design 5">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1560264329-55ac62b7810a?w=600&h=450&fit=crop" alt="Carousel design 6">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=450&fit=crop" alt="Carousel design 7">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1762329403968-9fef42b08a49?w=600&h=450&fit=crop" alt="Carousel design 8">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&h=450&fit=crop" alt="Carousel design 9">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&h=450&fit=crop" alt="Carousel design 10">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1594501251795-a3147759d741?w=600&h=450&fit=crop" alt="Carousel design 11">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1712903276026-9a2381d3b464?w=600&h=450&fit=crop" alt="Carousel design 12">
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image
+            </div>
+
+            <div id="banners" class="tab-content">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&h=450&fit=crop" alt="Banner design 1">
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=450&fit=crop" alt="Banner design 2">
+                    </div>
+                </div>
+            </div>
+
+            <div id="infographics" class="tab-content">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop" alt="Infographic 1">
+                    </div>
+                </div>
+            </div>
+
+            <div id="logos" class="tab-content">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=450&fit=crop" alt="Logo design 1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="text-gradient">What My Clients Say</h2>
+                <p>I'm proud to have collaborated with some amazing clients.</p>
+            </div>
+            
+            <div class="reviews-masonry">
+                <!-- Review with video -->
+                <div class="review-card fade-in">
+                    <div class="video-wrapper">
+                        <video poster="https://images.unsplash.com/photo-1638452236351-6f5ac0eb55c9?w=600&h=450&fit=crop" muted loop playsinline>
+                            <source src="https://player.vimeo.com/progressive_redirect/playback/993353401/rendition/540p/file.mp4?loc=external&signature=a9113114a819c938c82367069155c56ec85c0c1692e62b47d3419d27376c075e" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-name">Hetali Mehta</div>
+                            <div class="stars">
+                                <svg class="star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1
